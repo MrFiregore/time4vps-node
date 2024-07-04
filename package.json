@@ -1,14 +1,29 @@
 {
 	"name": "time4vps-node",
-	"packageManager": "^pnpm@8.15.1",
+	"repository": "https://github.com/MrFiregore/time4vps-node",
+	"homepage": "https://github.com/MrFiregore/time4vps-node#readme",
+	"bugs": {
+		"url": "https://github.com/AndreVarandas/clash-royale-api/issues"
+	},
+	"license": "LGPL-3.0-only",
+	"author": "MrFiregore <firegore2@gmail.com>",
+	"main": "lib/index.js",
+	"types": "lib/index.d.ts",
+	"files": [
+		"lib/**/*"
+	],
 	"scripts": {
+		"build": "pnpm run build:clean && pnpm run build:tsc",
+		"build:tsc": "tsc -p tsconfig.build.json && tscpaths -p tsconfig.build.json -s ./src -o ./lib",
+		"build:clean": "del-cli --force lib; exit 0",
 		"debug": "ts-node-dev --inspect=0.0.0.0:9229 --require tsconfig-paths/register --ignore-watch node_modules --respawn src/test.ts",
-		"lint": "eslint 'src/**/*.{ts,tsx}'"
+		"lint": "eslint --fix \"src/**/*.{ts,tsx}\""
 	},
 	"devDependencies": {
 		"@types/node": "^20.14.9",
 		"@typescript-eslint/eslint-plugin": "^7.15.0",
 		"@typescript-eslint/parser": "^7.15.0",
+		"del-cli": "^5.1.0",
 		"eslint": "^8.57.0",
 		"eslint-config-airbnb-base": "^15.0.0",
 		"eslint-import-resolver-typescript": "^3.6.1",
@@ -16,12 +31,13 @@
 		"eslint-plugin-align-import": "^1.0.0",
 		"eslint-plugin-import": "^2.29.1",
 		"eslint-plugin-unused-imports": "^4.0.0",
-		"ts-node": "^10.9.2",
 		"ts-node-dev": "^2.0.0",
 		"tsconfig-paths": "^4.2.0",
+		"tscpaths": "^0.0.9",
 		"typescript": "^5.5.3"
 	},
 	"dependencies": {
 		"axios": "^1.7.2"
-	}
+	},
+	"packageManager": "^pnpm@8.15.1"
 }

@@ -1,5 +1,5 @@
 import ErrorResponse  from '@src/interfaces/ErrorResponse';
-import Time4VpsClient from '../Time4VpsClient';
+import Time4VpsClient from '../index';
 
 export default abstract class BaseDomain {
   protected client: Time4VpsClient;
