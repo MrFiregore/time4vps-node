@@ -1,0 +1,16 @@
+# Ignora todos los archivos que no quieras incluir en el paquete npm
+src/
+node_modules/
+*.log
+*.ts
+!*.d.ts
+*.tsx
+*.json
+!.npmignore
+!.gitignore
+
+# Archivos específicos que quieras excluir
+# (puedes añadir más si es necesario)
+.git
+.gitignore
+dist/.tsbuildinfo
