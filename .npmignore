@@ -13,4 +13,4 @@ node_modules/
 # (puedes añadir más si es necesario)
 .git
 .gitignore
-dist/.tsbuildinfo
+lib/.tsbuildinfo
