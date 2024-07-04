@@ -1,5 +1,5 @@
 {
-	"name": "time4vps",
+	"name": "time4vps-node",
 	"packageManager": "^pnpm@8.15.1",
 	"scripts": {
 		"debug": "ts-node-dev --inspect=0.0.0.0:9229 --require tsconfig-paths/register --ignore-watch node_modules --respawn src/test.ts",
