@@ -1,0 +1,75 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "tsconfigRootDir": "./",
+    "sourceType": "module"
+  },
+  "extends": [
+    "airbnb-base"
+  ],
+  "plugins": [
+    "@typescript-eslint/eslint-plugin",
+    "@typescript-eslint",
+    "align-assignments",
+    "align-import",
+    "unused-imports"
+  ],
+  "ignorePatterns": [
+    "node_modules/**/*"
+  ],
+  "rules": {
+    "align-import/align-import" : "error",
+    "key-spacing": ["error", { "beforeColon": true, "afterColon": true, "align": "colon", "mode": "strict" }],
+    "unused-imports/no-unused-imports": "error",
+    "align-assignments/align-assignments": [2, { "requiresOnly": false }],
+    "import/extensions": "off",
+    "@typescript-eslint/quotes": ["error", "single"],
+    "import/newline-after-import": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["sibling", "parent", "index"]
+        ],
+        "newlines-between": "never",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "no-multi-spaces" : "off",
+    "object-curly-newline": [
+      "error",
+      {
+        "ImportDeclaration": { "multiline": true, "minProperties": 2 },
+        "ExportDeclaration": { "multiline": true, "minProperties": 3 },
+        "ObjectPattern": { "minProperties": 5, "multiline": true },
+        "ObjectExpression": { "minProperties": 1, "multiline": true }
+      }
+    ],
+    "lines-between-class-members": ["error", "always"],
+    "function-call-argument-newline": ["error", "consistent"],
+    "object-property-newline": ["error", { "allowAllPropertiesOnSameLine": false }],
+    "array-bracket-newline": ["error", { "minItems": 4, "multiline": true }],
+    "no-useless-constructor" : "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": "./tsconfig.json"
+      },
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "env": {
+    "jest": true
+  }
+}
